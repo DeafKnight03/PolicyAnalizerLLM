@@ -1,0 +1,392 @@
+[
+  {
+    "id": "GDPR_13_1_a_titolare",
+    "section": "1. Identità e contatti",
+    "title": "Titolare del trattamento (identità, sede, contatti)",
+    "description": "Indicare ragione sociale/denominazione, indirizzo/sede legale, e contatti del titolare.",
+    "legal_refs": ["GDPR Art. 13(1)(a)"],
+    "required_if": "Sempre",
+    "decision_guidelines": {
+      "present": "Denominazione + indirizzo/sede + almeno un contatto (email/PEC/modulo) esplicitati.",
+      "ambiguous": "Solo nome azienda o solo dominio web senza recapiti chiari.",
+      "missing": "Nessuna indicazione identificativa o di contatto del titolare."
+    },
+    "hints": ["'Titolare del trattamento'", "email/PEC", "sede legale", "indirizzo", "contatti"],
+    "severity": "high"
+  },
+  {
+    "id": "GDPR_13_1_a_rappresentanteUE",
+    "section": "1. Identità e contatti",
+    "title": "Rappresentante nell'UE (se titolare extra-UE)",
+    "description": "Indicare rappresentante stabilito nell'UE per titolare/soggetto extra-UE.",
+    "legal_refs": ["GDPR Art. 13(1)(a)", "GDPR Art. 27"],
+    "required_if": "Solo se il titolare non è stabilito nell'UE e il GDPR si applica.",
+    "decision_guidelines": {
+      "present": "Nome/denominazione e contatti del rappresentante UE sono dichiarati.",
+      "ambiguous": "Si menziona genericamente un rappresentante senza dati di contatto.",
+      "missing": "Nessun riferimento al rappresentante quando richiesto."
+    },
+    "hints": ["'rappresentante nell'Unione Europea'", "art. 27"],
+    "severity": "high"
+  },
+  {
+    "id": "GDPR_13_1_b_dpo",
+    "section": "1. Identità e contatti",
+    "title": "DPO (se nominato): contatti",
+    "description": "Fornire i contatti del Data Protection Officer se presente.",
+    "legal_refs": ["GDPR Art. 13(1)(b)", "GDPR Artt. 37–39"],
+    "required_if": "Obbligatorio se il DPO è stato designato.",
+    "decision_guidelines": {
+      "present": "Email o canale di contatto dedicato al DPO chiaramente indicato.",
+      "ambiguous": "DPO menzionato senza contatti diretti.",
+      "missing": "DPO non indicato quando noto o obbligatorio."
+    },
+    "hints": ["'Responsabile della protezione dei dati'", "DPO", "privacy@..."],
+    "severity": "medium"
+  },
+  {
+    "id": "GDPR_13_1_c_finalita",
+    "section": "2. Finalità e basi giuridiche",
+    "title": "Finalità del trattamento",
+    "description": "Descrivere in modo specifico le finalità per cui si trattano i dati.",
+    "legal_refs": ["GDPR Art. 13(1)(c)"],
+    "required_if": "Sempre",
+    "decision_guidelines": {
+      "present": "Finalità specifiche (es. gestione ordini, marketing con consenso, sicurezza IT).",
+      "ambiguous": "Finalità generiche ('migliorare i servizi') senza dettagli.",
+      "missing": "Nessuna finalità esplicitata."
+    },
+    "hints": ["'finalità'", "'scopi'", "marketing", "assistenza clienti", "fatturazione"],
+    "severity": "high"
+  },
+  {
+    "id": "GDPR_6_1_base_giuridica",
+    "section": "2. Finalità e basi giuridiche",
+    "title": "Base giuridica per ciascuna finalità",
+    "description": "Associare una base giuridica ad ogni finalità.",
+    "legal_refs": ["GDPR Art. 6(1)"],
+    "required_if": "Sempre",
+    "decision_guidelines": {
+      "present": "Ogni finalità ha la propria base (consenso, contratto, obbligo legale, interesse legittimo, ecc.).",
+      "ambiguous": "Base giuridica menzionata in generale ma non mappata alle singole finalità.",
+      "missing": "Nessuna base giuridica dichiarata."
+    },
+    "hints": ["'ai sensi dell'art. 6(1)'", "consenso", "contrattuale", "obbligo legale", "interesse legittimo"],
+    "severity": "high"
+  },
+  {
+    "id": "GDPR_9_2_dati_particolari",
+    "section": "2. Finalità e basi giuridiche",
+    "title": "Base giuridica per dati particolari (se presenti)",
+    "description": "Se si trattano categorie particolari di dati (art. 9), indicare la deroga applicata.",
+    "legal_refs": ["GDPR Art. 9(2)"],
+    "required_if": "Solo se si trattano dati particolari (salute, biometria, ecc.).",
+    "decision_guidelines": {
+      "present": "Deroga art. 9(2) esplicitata e coerente con la finalità.",
+      "ambiguous": "Riferimento a 'consenso' senza specificare che è 'esplicito' (se richiesto).",
+      "missing": "Nessun riferimento a 9(2) pur trattando dati particolari."
+    },
+    "hints": ["'categorie particolari'", "dati sanitari", "biometrici", "'consenso esplicito'"],
+    "severity": "high"
+  },
+  {
+    "id": "GDPR_13_1_d_interesse_legittimo",
+    "section": "2. Finalità e basi giuridiche",
+    "title": "Interesse legittimo: specificazione",
+    "description": "Se si invoca l'interesse legittimo, chiarire l'interesse perseguito.",
+    "legal_refs": ["GDPR Art. 13(1)(d)"],
+    "required_if": "Solo se base giuridica = interesse legittimo.",
+    "decision_guidelines": {
+      "present": "Interesse specifico (es. prevenzione frodi) e riferimento al bilanciamento.",
+      "ambiguous": "Interesse legittimo citato senza descrizione concreta.",
+      "missing": "Base dichiarata come interesse legittimo ma non spiegata."
+    },
+    "hints": ["'interesse legittimo'", "bilanciamento interessi", "legitimate interest"],
+    "severity": "medium"
+  },
+  {
+    "id": "GDPR_14_1_d_categorie_dati",
+    "section": "3. Categorie e origine dei dati",
+    "title": "Categorie di dati trattati (se raccolti da terzi)",
+    "description": "Indicare le categorie dei dati quando non raccolti presso l'interessato.",
+    "legal_refs": ["GDPR Art. 14(1)(d)"],
+    "required_if": "Quando i dati non sono raccolti dall'interessato.",
+    "decision_guidelines": {
+      "present": "Elenco chiaro delle categorie (es. anagrafici, contatto, pagamento).",
+      "ambiguous": "Indicazioni vaghe ('alcuni dati tecnici').",
+      "missing": "Nessuna categoria indicata nonostante origine da terzi."
+    },
+    "hints": ["'categorie di dati'", "dati di contatto", "dati di pagamento"],
+    "severity": "medium"
+  },
+  {
+    "id": "GDPR_14_2_f_origine_dati",
+    "section": "3. Categorie e origine dei dati",
+    "title": "Origine dei dati (se da terzi)",
+    "description": "Indicare la fonte/terzo dal quale provengono i dati.",
+    "legal_refs": ["GDPR Art. 14(2)(f)"],
+    "required_if": "Quando i dati non sono raccolti dall'interessato.",
+    "decision_guidelines": {
+      "present": "Fonte chiarita (es. partner X, banche dati pubbliche).",
+      "ambiguous": "Si indica 'da terzi' senza specificare quali.",
+      "missing": "Nessuna informazione sull'origine."
+    },
+    "hints": ["'provenienza'", "'origine dei dati'", "fornitori terzi", "partner"],
+    "severity": "medium"
+  },
+  {
+    "id": "GDPR_13_1_e_destinatari",
+    "section": "4. Destinatari e trasferimenti",
+    "title": "Destinatari o categorie di destinatari",
+    "description": "Indicare a chi vengono comunicati i dati o le categorie di destinatari.",
+    "legal_refs": ["GDPR Art. 13(1)(e)"],
+    "required_if": "Sempre",
+    "decision_guidelines": {
+      "present": "Elenco (es. provider cloud, consulenti, corrieri) o categorie precise.",
+      "ambiguous": "Formule generiche ('terze parti selezionate') senza esempi.",
+      "missing": "Assenza di qualsiasi riferimento ai destinatari."
+    },
+    "hints": ["'destinatari'", "responsabili del trattamento", "fornitori di servizi"],
+    "severity": "high"
+  },
+  {
+    "id": "GDPR_26_28_ruoli",
+    "section": "4. Destinatari e trasferimenti",
+    "title": "Distinzione ruoli: titolare/contitolare/responsabile",
+    "description": "Chiarire i ruoli privacy dei soggetti coinvolti.",
+    "legal_refs": ["GDPR Artt. 26–28"],
+    "required_if": "Quando sono coinvolti altri soggetti nel trattamento.",
+    "decision_guidelines": {
+      "present": "Ruoli esplicitati (contitolarità/responsabili con accordi).",
+      "ambiguous": "Ruoli accennati senza basi/accordi.",
+      "missing": "Nessuna distinzione dei ruoli nonostante coinvolgimento di terzi."
+    },
+    "hints": ["'responsabile del trattamento'", "'accordo ex art. 28'", "'contitolare'"],
+    "severity": "medium"
+  },
+  {
+    "id": "GDPR_13_1_f_44_49_trasferimenti_extraUE",
+    "section": "4. Destinatari e trasferimenti",
+    "title": "Trasferimenti extra-UE: base legale e garanzie",
+    "description": "Indicare base/strumento (decisioni adeguatezza, SCC, deroghe) e garanzie.",
+    "legal_refs": ["GDPR Art. 13(1)(f)", "GDPR Artt. 44–49"],
+    "required_if": "Solo se avvengono trasferimenti verso Paesi terzi.",
+    "decision_guidelines": {
+      "present": "Strumento definito (es. SCC 2021, decisione adeguatezza) e Paesi/garanzie menzionati.",
+      "ambiguous": "Si cita 'trasferimenti' senza specificare lo strumento.",
+      "missing": "Nessun riferimento pur trasferendo dati extra-UE."
+    },
+    "hints": ["'Standard Contractual Clauses'", "decisione di adeguatezza", "Paesi terzi"],
+    "severity": "high"
+  },
+  {
+    "id": "GDPR_13_2_a_conservazione",
+    "section": "5. Conservazione dei dati",
+    "title": "Periodo di conservazione o criteri oggettivi",
+    "description": "Indicare una durata specifica o criteri verificabili per ogni finalità/categoria.",
+    "legal_refs": ["GDPR Art. 13(2)(a)"],
+    "required_if": "Sempre",
+    "decision_guidelines": {
+      "present": "Durate espresse (es. 10 anni per obblighi fiscali) o criteri chiari.",
+      "ambiguous": "Formule vaghe (es. 'per il tempo necessario', 'nei limiti di legge') senza dettaglio.",
+      "missing": "Nessuna indicazione di durata o criteri."
+    },
+    "hints": ["'conservazione'", "'periodo'", "'durata'", "'termine'"],
+    "severity": "high"
+  },
+  {
+    "id": "GDPR_15_22_diritti",
+    "section": "6. Diritti dell’interessato",
+    "title": "Elenco dei diritti applicabili",
+    "description": "Indicare i diritti: accesso, rettifica, cancellazione, limitazione, portabilità, opposizione, revoca consenso, no decisioni automatizzate.",
+    "legal_refs": ["GDPR Artt. 15–22", "GDPR Art. 13(2)(b)", "GDPR Art. 13(2)(c)"],
+    "required_if": "Sempre",
+    "decision_guidelines": {
+      "present": "Elenco completo o chiaramente richiamato.",
+      "ambiguous": "Elenco parziale senza chiarimenti.",
+      "missing": "Assenza di qualsiasi elenco dei diritti."
+    },
+    "hints": ["'diritto di accesso'", "'portabilità'", "'opposizione'", "'revoca'"],
+    "severity": "high"
+  },
+  {
+    "id": "GDPR_12_1_modalita_esercizio",
+    "section": "6. Diritti dell’interessato",
+    "title": "Modalità di esercizio dei diritti",
+    "description": "Fornire canali pratici (email/PEC/modulo) e tempi di riscontro.",
+    "legal_refs": ["GDPR Art. 12(1)"],
+    "required_if": "Sempre",
+    "decision_guidelines": {
+      "present": "Indicato canale di contatto dedicato e tempi standard (30 giorni).",
+      "ambiguous": "Si invita a 'contattarci' senza canale chiaro.",
+      "missing": "Nessuna informazione su come esercitare i diritti."
+    },
+    "hints": ["'come esercitare i diritti'", "PEC", "modulo", "30 giorni"],
+    "severity": "medium"
+  },
+  {
+    "id": "GDPR_13_2_d_reclamo_garante",
+    "section": "6. Diritti dell’interessato",
+    "title": "Diritto di reclamo al Garante",
+    "description": "Informare sul diritto di proporre reclamo all'Autorità Garante.",
+    "legal_refs": ["GDPR Art. 13(2)(d)"],
+    "required_if": "Sempre",
+    "decision_guidelines": {
+      "present": "Riferimento esplicito al Garante per la protezione dei dati personali.",
+      "ambiguous": "Rimando generico a 'autorità competenti'.",
+      "missing": "Nessuna menzione del diritto di reclamo."
+    },
+    "hints": ["'Garante per la protezione dei dati personali'", "reclamo"],
+    "severity": "medium"
+  },
+  {
+    "id": "CPI_2_quinquies_minori",
+    "section": "7. Consenso dei minori",
+    "title": "Età per il consenso servizi della società dell'informazione",
+    "description": "In Italia: 14 anni. Se <14, consenso dei genitori/tutori.",
+    "legal_refs": ["CPI Art. 2-quinquies (D.Lgs. 196/2003)"],
+    "required_if": "Quando si offrono servizi online a minori.",
+    "decision_guidelines": {
+      "present": "Soglia 14 anni indicata; meccanismo per consenso genitori.",
+      "ambiguous": "Si indica una soglia diversa o non chiara.",
+      "missing": "Nessuna indicazione sull'età/consenso minori quando pertinente."
+    },
+    "hints": ["'minori'", "'14 anni'", "'consenso dei genitori'"],
+    "severity": "high"
+  },
+  {
+    "id": "GARANTE_2021_cookie_informativa",
+    "section": "8. Cookie e tracciamento",
+    "title": "Informativa cookie dedicata (tipi, durata, terze parti)",
+    "description": "Informativa specifica su tipologie, finalità, durata, terze parti e link alle policy.",
+    "legal_refs": ["GDPR Artt. 12–13", "Provv. Garante 10/06/2021"],
+    "required_if": "Quando si usano cookie/tecnologie di tracciamento.",
+    "decision_guidelines": {
+      "present": "Pagina cookie con tabella/elenchi (tipi, durate, terze parti).",
+      "ambiguous": "Informazioni generiche senza dettagli pratici.",
+      "missing": "Assente nonostante uso di cookie non tecnici."
+    },
+    "hints": ["'cookie policy'", "Google Analytics", "pixel", "durata", "terze parti"],
+    "severity": "high"
+  },
+  {
+    "id": "GARANTE_2021_cookie_banner",
+    "section": "8. Cookie e tracciamento",
+    "title": "Banner conforme e gestione preferenze",
+    "description": "Banner con opzioni simmetriche (accetta/rifiuta/gestisci) e granularità.",
+    "legal_refs": ["Provv. Garante 10/06/2021"],
+    "required_if": "Quando si impiegano cookie non tecnici/prior consent.",
+    "decision_guidelines": {
+      "present": "Pulsanti accetta/rifiuta equivalenti + 'preferenze' granulare.",
+      "ambiguous": "Solo 'Accetta' evidente, 'Rifiuta' nascosto o assente.",
+      "missing": "Nessun meccanismo di consenso gestibile dall'utente."
+    },
+    "hints": ["'rifiuta'", "'gestisci preferenze'", "granularità"],
+    "severity": "high"
+  },
+  {
+    "id": "GDPR_13_2_f_22_profilazione",
+    "section": "9. Trattamenti particolari",
+    "title": "Profilazione/decisioni automatizzate: logica e conseguenze",
+    "description": "Descrivere la logica, l'importanza e le conseguenze previste; diritti connessi.",
+    "legal_refs": ["GDPR Art. 13(2)(f)", "GDPR Art. 22"],
+    "required_if": "Quando è presente profilazione o decisioni unicamente automatizzate.",
+    "decision_guidelines": {
+      "present": "Logica di base, conseguenze, diritto a intervento umano/contestazione.",
+      "ambiguous": "Profilazione citata senza dettagli.",
+      "missing": "Nessuna informazione nonostante la profilazione."
+    },
+    "hints": ["'profilazione'", "'decisione automatizzata'", "scoring", "algoritmo"],
+    "severity": "high"
+  },
+  {
+    "id": "GDPR_13_videosorveglianza",
+    "section": "9. Trattamenti particolari",
+    "title": "Videosorveglianza: cartelli e informativa completa",
+    "description": "Cartelli informativi sintetici + informativa estesa disponibile.",
+    "legal_refs": ["GDPR Art. 13", "Provv. Garante 2010", "FAQ Garante 2020"],
+    "required_if": "Se presenti sistemi di videosorveglianza.",
+    "decision_guidelines": {
+      "present": "Cartelli conformi + informativa estesa accessibile (URL/uffici).",
+      "ambiguous": "Cartelli presenti ma senza rinvio a informativa estesa.",
+      "missing": "Nessun riferimento informativo alla videosorveglianza."
+    },
+    "hints": ["'videosorveglianza'", "cartelli", "telecamere", "CCTV"],
+    "severity": "medium"
+  },
+  {
+    "id": "GDPR_13_geolocalizzazione",
+    "section": "9. Trattamenti particolari",
+    "title": "Geolocalizzazione: finalità chiare e limiti",
+    "description": "Specificare finalità, frequenza/accuratezza, conservazione e diritti.",
+    "legal_refs": ["GDPR Art. 13", "Provv./Linee guida Garante (geolocalizzazione)"],
+    "required_if": "Se l'app/servizio traccia la posizione.",
+    "decision_guidelines": {
+      "present": "Finalità e parametri (frequenza, accuratezza) + tempi conservazione.",
+      "ambiguous": "Indicata geolocalizzazione senza dettagli operativi.",
+      "missing": "Nessuna informazione nonostante tracking posizione."
+    },
+    "hints": ["'posizione'", "GPS", "geofencing", "tracking"],
+    "severity": "medium"
+  },
+  {
+    "id": "STATUTO_4_CPI_114_lavoratori",
+    "section": "9. Trattamenti particolari",
+    "title": "Dati lavoratori e controlli a distanza",
+    "description": "Conformità a Statuto dei Lavoratori art. 4 e CPI art. 114 (informativa, accordo sindacale/autorizzazione).",
+    "legal_refs": ["L. 300/1970 Art. 4", "CPI Art. 114"],
+    "required_if": "Se si trattano dati dei lavoratori con strumenti di controllo.",
+    "decision_guidelines": {
+      "present": "Finalità, strumenti, basi e garanzie sono esplicitati; riferimenti ad accordi/autorizzazioni.",
+      "ambiguous": "Controlli citati senza base o garanzie.",
+      "missing": "Nessuna informazione pur usando strumenti di controllo."
+    },
+    "hints": ["'controlli a distanza'", "strumenti aziendali", "badge", "monitoraggio"],
+    "severity": "high"
+  },
+  {
+    "id": "GDPR_12_1_linguaggio",
+    "section": "10. Linguaggio e accessibilità",
+    "title": "Linguaggio semplice, chiaro e comprensibile",
+    "description": "Informazioni fornite in forma concisa, trasparente, intelligibile.",
+    "legal_refs": ["GDPR Art. 12(1)"],
+    "required_if": "Sempre",
+    "decision_guidelines": {
+      "present": "Linguaggio non tecnico, frasi brevi, struttura leggibile.",
+      "ambiguous": "Alcune sezioni eccessivamente tecniche.",
+      "missing": "Testo legale incomprensibile per un utente medio."
+    },
+    "hints": ["'in modo chiaro e trasparente'", "sezioni/elenchi puntati"],
+    "severity": "medium"
+  },
+  {
+    "id": "GARANTE_accessibilita_italiano",
+    "section": "10. Linguaggio e accessibilità",
+    "title": "Italiano corretto e accessibilità",
+    "description": "Correttezza linguistica e usabilità (titoli, sommario, accessibilità).",
+    "legal_refs": ["Linee guida/Provv. Garante (trasparenza)"],
+    "required_if": "Sempre",
+    "decision_guidelines": {
+      "present": "Italiano corretto; struttura/accessibilità ragionevoli.",
+      "ambiguous": "Qualche imprecisione formale ma contenuto comprensibile.",
+      "missing": "Testo poco fruibile per errori o scarsa accessibilità."
+    },
+    "hints": ["indice", "titoli chiari", "link interni"],
+    "severity": "low"
+  },
+  {
+    "id": "GDPR_12_1_minori_linguaggio",
+    "section": "10. Linguaggio e accessibilità",
+    "title": "Linguaggio adeguato ai minori (se target)",
+    "description": "Adattare il registro per utenti minori; esempi, icone, semplicità.",
+    "legal_refs": ["GDPR Art. 12(1)"],
+    "required_if": "Se i servizi sono rivolti anche a minori.",
+    "decision_guidelines": {
+      "present": "Sezioni semplificate/icone per minori.",
+      "ambiguous": "Nessun adattamento pur menzionando minori.",
+      "missing": "Assenza totale di adeguamento quando necessario."
+    },
+    "hints": ["icone", "glossario semplice", "esempi per ragazzi"],
+    "severity": "medium"
+  }
+]

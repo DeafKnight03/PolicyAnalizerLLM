@@ -1,0 +1,6 @@
+regex
+tqdm
+pandas
+jsonschema
+rich
+pytest
